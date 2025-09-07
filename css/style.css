@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+/* reset css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* estilização corpo da página */
+body {
+  background-color: #e3edf7;
+}
+
+/* perguntas frequentes - estilo */
+.accordion {
+  margin: 60px auto;
+  width: 600px;
+}
+
+/* estilo de cada item da lista */
+.accordion li {
+  list-style: none;
+  width: 100%;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #e3edf7;
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+    -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+}
+
+.accordion li label {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+label::before {
+  content: "+";
+  margin-right: 10px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* input não visível */
+input[type="radio"] {
+  display: none;
+}
+
+.accordion .content {
+  color: #949494;
+  padding: 0 10px;
+  line-height: 26px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-heigth 0.5s ease, padding 0.5s;
+}
+
+/* conteúdo mostrando quando input é marcado */
+.accordion input[type="radio"]:checked + label + .content {
+  max-height: 400px;
+  padding: 10px 10px 20px;
+}
+
+/* muda para ' - '  quando selecionado */
+.accordion input[type="radio"]:checked + label::before {
+  content: "-";
+}
